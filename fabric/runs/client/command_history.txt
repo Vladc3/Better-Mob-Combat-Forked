@@ -1,0 +1,13 @@
+/effect give @p minecraft:resistance infinite 255
+/summon minecraft:husk ~ ~ ~ {HandItems:[{id:"minecraft:iron_sword",Count:1b},{id:"minecraft:iron_sword",Count:1b}]}
+/summon enderzoology:infested_zombie ~ ~ ~ {HandItems:[{id:"minecraft:iron_sword",Count:1b},{id:"minecraft:iron_sword",Count:1b}]}
+/effect give @p minecraft:strength infinite 255
+/summon enderzoology:infested_zombie ~ ~ ~ {HandItems:[{},{id:"minecraft:iron_sword",Count:1b}]}
+/summon enderzoology:infested_zombie ~ ~ ~ {HandItems:[{},{id:"minecraft:iron_axe",Count:1b}]}
+/summon enderzoology:infested_zombie ~ ~ ~ {HandItems:[{},{id:"minecraft:iron_pickaxe",Count:1b}]}
+/summon enderzoology:infested_zombie ~ ~ ~ {HandItems:[{},{id:"minecraft:iron_axe",Count:1b}]}
+/summon enderzoology:infested_zombie ~ ~ ~ {HandItems:[{},{id:"minecraft:iron_pickaxe",Count:1b}]}
+/summon enderzoology:infested_zombie ~ ~ ~ {HandItems:[{},{id:"minecraft:iron_axe",Count:1b}]}
+/summon enderzoology:infested_zombie ~ ~ ~ {HandItems:[{id:"minecraft:tnt",Count:1b},{id:"minecraft:iron_sword",Count:1b}]}
+/summon enderzoology:infested_zombie ~ ~ ~ {HandItems:[{},{id:"minecraft:iron_axe",Count:1b}]}
+/effect give @p minecraft:hero_of_the_village infinite

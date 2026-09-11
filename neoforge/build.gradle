@@ -1,0 +1,109 @@
+plugins {
+    id 'multiloader-loader'
+    id 'net.neoforged.moddev'
+}
+
+neoForge {
+    version = neoforge_version
+    // Automatically enable neoforge AccessTransformers if the file exists
+    def at = project(':common').file('src/main/resources/META-INF/accesstransformer.cfg')
+    if (at.exists()) {
+        accessTransformers.from(at.absolutePath)
+    }
+    parchment {
+        minecraftVersion = parchment_minecraft
+        mappingsVersion = parchment_version
+    }
+    runs {
+        configureEach {
+            systemProperty('neoforge.enabledGameTestNamespaces', mod_id)
+            ideName = "NeoForge ${it.name.capitalize()} (${project.path})" // Unify the run config names with fabric
+        }
+        client {
+            client()
+        }
+        client2 {
+            client()
+            programArguments.addAll '--username', 'Dev1'
+            gameDirectory = project.file('run2')
+        }
+        data {
+            data()
+            // example of overriding the workingDirectory set in configureEach above, uncomment if you want to use it
+            // workingDirectory project.file('run-data')
+
+            // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
+            programArguments.addAll '--mod', project.mod_id, '--all',
+                    '--output', rootProject.project(":common").file('src/generated/resources/').getAbsolutePath(),
+                    '--existing', rootProject.project(":common").file('src/main/resources/').getAbsolutePath()
+        }
+        server {
+            server()
+        }
+    }
+    mods {
+        "${mod_id}" {
+            sourceSet sourceSets.main
+        }
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'lib'
+    }
+}
+
+sourceSets.main.resources { srcDir 'src/generated/resources' }
+dependencies {
+    runtimeOnly("lib:mobplayeranimator-neoforge:${project.mob_player_anim_version}")
+
+    implementation("maven.modrinth:better-combat:${project.better_combat_version}-neoforge")
+    // Better Combat Dependencies
+
+    implementation("dev.kosmx.player-anim:player-animation-lib-forge:${project.player_anim_version}")
+    implementation("me.shedaniel.cloth:cloth-config-neoforge:${project.cloth_config_version}")
+
+    // Mod Compatibility
+    implementation("maven.modrinth:guard-villagers:${project.guard_villagers_version}")
+    implementation("software.bernie.geckolib:geckolib-neoforge-${minecraft_version}:${geckolib_version}")
+    //implementation("maven.modrinth:villager-recruits:${recruits_version}") no 1.21.1
+    implementation("maven.modrinth:minecraft-comes-alive-reborn:${mcar_version}")
+    runtimeOnly("maven.modrinth:architectury-api:${architectury_version}+neoforge")
+
+    // Easy NPC deps
+    implementation("maven.modrinth:easy-npc:${easy_npc_version}")
+    implementation("maven.modrinth:easy-npc-core:${easy_npc_core}")
+    implementation("maven.modrinth:easy-npc-config-ui:${easy_npc_config_ui}")
+
+
+    implementation("maven.modrinth:customnpcs-unofficial:${custom_npcs_version}")
+    implementation("maven.modrinth:kotlin-for-forge:${kotlinforforge}")
+
+
+    runtimeOnly("maven.modrinth:simply-swords:${simply_swords_version}-neoforge")
+    runtimeOnly("maven.modrinth:fzzy-config:${fzzy_config}")
+
+    implementation("maven.modrinth:irons-spells-n-spellbooks:${irons_spells_n_spellbooks_version}")
+    runtimeOnly("maven.modrinth:curios:${curios_version}")
+    runtimeOnly("maven.modrinth:caelus:${caelus_api_version}")
+
+    implementation("curse.maven:minecolonies-245506:$minecolonies")
+    // Minecolonies dependencies
+    runtimeOnly("curse.maven:structurize-298744:$structurize")
+    runtimeOnly("curse.maven:multi-piston-303278:$multi_piston")
+    runtimeOnly("curse.maven:blockui-522992:$blockui")
+    runtimeOnly("curse.maven:domum-ornamentum-527361:$domum_ornamentum")
+
+    implementation("curse.maven:modulargolems-690937:$modular_golems")
+    // Modular Golems dependency
+    implementation("curse.maven:l2library-620203:$l2library")
+    implementation("curse.maven:roamers-724447:$roamers")
+    //implementation("curse.maven:fake-player-845992:4785989") no 1.21.1 version
+    //implementation("curse.maven:it-takes-a-pillage-635843:4981343") no 1.21.1 version
+    runtimeOnly("curse.maven:mob-battle-mod-268746:$mob_battle_mod")
+
+    //implementation "curse.maven:hackers-n-slashers-1176763:6778903"  they disable 3rd party downloads
+    implementation("lib:hackersandslashers:1.1.4-beta-6.1")
+
+}

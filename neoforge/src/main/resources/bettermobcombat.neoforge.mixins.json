@@ -1,0 +1,23 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "me.Thelnfamous1.bettermobcombat.mixin",
+  "refmap": "${mod_id}.refmap.json",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "compat.customnpcs.EntityAIAttackTargetMixin",
+    "compat.guardvillagers.GuardMeleeGoalMixin",
+    "compat.ironsspellbooks.WarlockAttackGoalMixin",
+    "compat.minecolonies.AttackMoveAIMixin",
+    "compat.minecolonies.KnightCombatAIMixin",
+    "compat.minecolonies.RaiderMeleeAIMixin",
+    "compat.modulargolems.GolemMeleeGoalMixin"
+  ],
+  "client": [
+  ],
+  "server": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

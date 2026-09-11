@@ -1,0 +1,136 @@
+{
+  "rpg_series:root": {
+    "criteria": {
+      "always": "2026-07-24 16:45:53 -0400"
+    },
+    "done": true
+  },
+  "minecraft:story/obtain_armor": {
+    "criteria": {
+      "iron_chestplate": "2026-07-24 16:45:53 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/iron_nugget_from_smelting": {
+    "criteria": {
+      "has_iron_axe": "2026-07-24 16:45:53 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/gold_nugget_from_smelting": {
+    "criteria": {
+      "has_golden_sword": "2026-07-24 16:45:53 -0400"
+    },
+    "done": true
+  },
+  "enderzoology:recipes/misc/ender_pearl": {
+    "criteria": {
+      "has_ender_fragment": "2026-07-24 16:45:53 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/gold_ingot_from_nuggets": {
+    "criteria": {
+      "has_gold_nugget": "2026-07-24 16:45:53 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/gold_nugget_from_blasting": {
+    "criteria": {
+      "has_golden_sword": "2026-07-24 16:45:53 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2026-07-24 16:45:53 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/chest": {
+    "criteria": {
+      "has_lots_of_items": "2026-07-24 16:45:53 -0400"
+    },
+    "done": true
+  },
+  "rpg_series:misc_items": {
+    "criteria": {
+      "always": "2026-07-24 16:45:53 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/building_blocks/emerald_block": {
+    "criteria": {
+      "has_emerald": "2026-07-24 16:45:53 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/brewing/golden_carrot": {
+    "criteria": {
+      "has_gold_nugget": "2026-07-24 16:45:53 -0400"
+    },
+    "done": true
+  },
+  "enderzoology:recipes/redstone/ender_charge": {
+    "criteria": {
+      "has_ender_fragment": "2026-07-24 16:45:53 -0400"
+    },
+    "done": true
+  },
+  "minecraft:adventure/kill_all_mobs": {
+    "criteria": {
+      "minecraft:husk": "2026-07-24 16:46:47 -0400"
+    },
+    "done": false
+  },
+  "minecraft:recipes/misc/bone_meal": {
+    "criteria": {
+      "has_bone": "2026-07-24 16:45:53 -0400"
+    },
+    "done": true
+  },
+  "enderzoology:recipes/food/enderios": {
+    "criteria": {
+      "has_ender_fragment": "2026-07-24 16:45:53 -0400"
+    },
+    "done": true
+  },
+  "wizards:recipes/misc/gold_nugget_from_blasting_wand_fire": {
+    "criteria": {
+      "has_wand_fire": "2026-07-24 16:45:53 -0400"
+    },
+    "done": true
+  },
+  "minecraft:adventure/root": {
+    "criteria": {
+      "killed_something": "2026-07-24 16:46:47 -0400"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/iron_nugget_from_blasting": {
+    "criteria": {
+      "has_iron_axe": "2026-07-24 16:45:53 -0400"
+    },
+    "done": true
+  },
+  "minecraft:adventure/kill_a_mob": {
+    "criteria": {
+      "minecraft:husk": "2026-07-24 16:46:47 -0400"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:forest": "2026-07-24 16:46:41 -0400",
+      "minecraft:stony_shore": "2026-07-24 16:45:54 -0400"
+    },
+    "done": false
+  },
+  "wizards:recipes/misc/gold_nugget_from_smelting_wand_fire": {
+    "criteria": {
+      "has_wand_fire": "2026-07-24 16:45:53 -0400"
+    },
+    "done": true
+  },
+  "DataVersion": 3955
+}
