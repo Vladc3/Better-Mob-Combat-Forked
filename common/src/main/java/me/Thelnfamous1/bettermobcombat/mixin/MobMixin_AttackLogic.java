@@ -497,7 +497,13 @@ public abstract class MobMixin_AttackLogic extends LivingEntity implements Entit
                 String animationName = hand.attack().animation();
                 boolean isOffHand = hand.isOffHand();
                 AnimatedHand animatedHand = AnimatedHand.from(isOffHand, attributes.isTwoHanded());
-                PacketHandler.sendToTracking( new S2CAttackAnimation(getId(), animatedHand, animationName, attackCooldownTicksFloat, upswingRate),this);
+                // A null name can't be encoded (STRING_UTF8) and the EncoderException disconnects every tracking player.
+                // Skip only the animation; the attack itself still happens.
+                if (animationName != null && !animationName.isEmpty()) {
+                    PacketHandler.sendToTracking( new S2CAttackAnimation(getId(), animatedHand, animationName, attackCooldownTicksFloat, upswingRate),this);
+                } else {
+                    Constants.LOG.debug("Skipping attack animation for {}: attack has no animation", this);
+                }
                 BetterMobCombatEvents.ATTACK_START.invoke((handler) -> {
                     handler.onMobAttackStart(((Mob)(Object)this), hand);
                 });
