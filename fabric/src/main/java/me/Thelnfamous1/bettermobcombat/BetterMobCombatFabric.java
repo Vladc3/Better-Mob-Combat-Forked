@@ -1,5 +1,6 @@
 package me.Thelnfamous1.bettermobcombat;
 
+import me.Thelnfamous1.bettermobcombat.network.BMCFabricNetwork;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.minecraft.server.MinecraftServer;
@@ -18,6 +19,9 @@ public class BetterMobCombatFabric implements ModInitializer {
 
         // Use Fabric to bootstrap the Common mod.
         BetterMobCombat.init();
+        // Payload types must be registered on the dedicated server too, or S2C packets
+        // fall back to DiscardedPayload's codec and the encoder disconnects the player.
+        BMCFabricNetwork.register();
         ServerLifecycleEvents.SERVER_STARTING.register(server -> currentServer = server);
         ServerLifecycleEvents.SERVER_STOPPED.register(server -> currentServer = null);
     }
